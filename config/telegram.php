@@ -133,7 +133,8 @@ return [
         \App\Telegram\Commands\StartCommand::class,
         \App\Telegram\Commands\CreateTasksCommands::class,
         \App\Telegram\Commands\GetTasksCommand::class,
-        \App\Telegram\Commands\IsDoneTaskCommand::class
+        \App\Telegram\Commands\IsDoneTaskCommand::class,
+        \App\Telegram\Commands\DeleteTasksCommands::class
     ],
 
     /*
