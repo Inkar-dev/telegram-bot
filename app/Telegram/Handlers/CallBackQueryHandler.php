@@ -37,6 +37,20 @@ class CallBackQueryHandler {
                 Telegram::sendMessage(['chat_id' => $chatId, 'text' => "Задача не найдена!"]);
             }
         }
+        if (strpos($callbackData, 'delete_') === 0) {
+            $taskId = str_replace('delete_', '', $callbackData);
+            $task = Task::find($taskId);
+            if ($task) {
+                $task->delete();
+                Telegram::sendMessage([
+                    'chat_id' => $chatId,
+                    'text' => "Task *$task->name* has been deleted successfully!",
+                    'parse_mode' => 'Markdown',
+                ]);
+            } else {
+                Telegram::sendMessage(['chat_id' => $chatId, 'text' => "Задача не найдена!"]);
+            }
+        }
     }
 }
 
