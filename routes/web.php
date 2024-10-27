@@ -8,7 +8,7 @@ Route::get('/', function () {
 
 Route::get('/set-webhook', function () {
     try {
-        \Telegram\Bot\Laravel\Facades\Telegram::setWebhook(['url' => 'https://ccd6-5-188-65-228.ngrok-free.app/api/telegram-webhook']);
+        \Telegram\Bot\Laravel\Facades\Telegram::setWebhook(['url' => 'https://a98e-37-99-44-167.ngrok-free.app/api/telegram-webhook']);
 
     } catch (Exception $exception) {
         dd($exception);
